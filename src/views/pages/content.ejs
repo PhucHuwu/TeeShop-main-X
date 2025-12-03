@@ -1,0 +1,112 @@
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    min-height: 60vh;
+  }
+
+  .page-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .page-title h1 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  /* Products Grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-icon {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .product-price {
+    font-size: 20px;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .product-desc {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* số dòng muốn hiển thị */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+
+  .view-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .view-btn:hover {
+    background: #2980b9;
+  }
+</style>
+
+<body>
+  <div id="homePage" class="container">
+    <div class="page-title">
+      <h1>Sản Phẩm Thời trang</h1>
+      <p>Chọn sản phẩm phù hợp với bạn</p>
+    </div>
+    <div class="products-grid" id="productsGrid">
+      <% products.forEach(product => { %>
+      <div class="product-card">
+        <img class="product-icon" src="<%= product.image %>"></img>
+        <div class="product-name"><%= product.name %></div>
+        <div class="product-price"><%= formatCurrency(product.price) %></div>
+        <div class="product-desc"><%= product.description%></div>
+        <a href="/detail/<%= product._id %>" class="view-btn">Xem Chi Tiết</a>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+
+</html>

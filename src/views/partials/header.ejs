@@ -1,0 +1,78 @@
+<style>
+  header {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+  }
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .logo img {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .cart-badge {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+</style>
+<header id="header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="https://static.vecteezy.com/system/resources/previews/000/441/931/original/vector-tea-icon.jpg" alt="">
+      TeeShop
+    </div>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/products">Sản phẩm</a>
+      <a href="/cart">Giỏ hàng <span class="cart-badge" id="cartBadge">0</span></a>
+
+    </nav>
+  </div>
+</header>
+<script>
+  const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+
+  function formatCurrency(number) {
+    return number.toLocaleString('vi-VN') + 'đ';
+  }
+
+  function buy() {
+    alert('Mua hàng thành công!');
+  }
+
+
+  function updateCartBadge() {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('cartBadge').textContent = totalItems;
+  }
+  updateCartBadge()
+</script>

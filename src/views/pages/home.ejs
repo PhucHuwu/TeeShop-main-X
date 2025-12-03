@@ -1,0 +1,295 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 100%);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    color: #1a1a1a;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin-bottom: 50px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    padding: 16px 48px;
+    background-color: #1a1a1a;
+    color: #faf9f7;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid #1a1a1a;
+  }
+
+  .hero-cta:hover {
+    background-color: transparent;
+    color: #1a1a1a;
+  }
+
+  /* About Section */
+  .about {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .about-image {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #e8e6e1 0%, #d9d5cc 100%);
+    border-radius: 8px;
+  }
+
+  /* Values Section */
+  .values {
+    padding: 100px 20px;
+    background-color: #f5f3f0;
+  }
+
+  .values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .value-card {
+    text-align: center;
+    padding: 30px;
+    background-color: #faf9f7;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .value-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .value-card h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .value-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+  }
+
+  /* Story Section */
+  .story {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .story-image {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #d9d5cc 0%, #c9c3b8 100%);
+    border-radius: 8px;
+    order: 2;
+  }
+
+  .story-text {
+    order: 1;
+  }
+
+  .story-text h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  .story-text p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  /* CTA Section */
+  .cta {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    color: #faf9f7;
+    text-align: center;
+  }
+
+  .cta h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  .cta p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    color: #e8e6e1;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 16px 48px;
+    background-color: #faf9f7;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid #faf9f7;
+  }
+
+  .cta-button:hover {
+    background-color: transparent;
+    color: #faf9f7;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+
+    .about-content,
+    .story-content {
+      grid-template-columns: 1fr;
+    }
+
+    .story-image,
+    .story-text {
+      order: unset;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about,
+    .story,
+    .values,
+    .cta {
+      padding: 60px 20px;
+    }
+  }
+</style>
+<main class="wrap" id="main-content">
+  <section class="hero">
+    <h1>Thời Trang Bền Vững</h1>
+    <p>Khám phá bộ sưu tập quần áo chất lượng cao, được thiết kế với sự chú trọng đến chi tiết và tôn trọng môi trường</p>
+    <a href="/products" class="hero-cta">KHÁM PHÁ NGAY</a>
+  </section>
+  <!-- Values Section -->
+  <section class="values">
+    <div class="values-container">
+      <h2 class="section-title">Giá Trị Cốt Lõi Của Chúng Tôi</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">♻️</div>
+          <h3>Bền Vững</h3>
+          <p>Cam kết sử dụng chất liệu thân thiện với môi trường và quy trình sản xuất có trách nhiệm.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✨</div>
+          <h3>Chất Lượng</h3>
+          <p>Mỗi sản phẩm được kiểm tra kỹ lưỡng để đảm bảo độ bền và thoải mái tối đa.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🎨</div>
+          <h3>Thiết Kế</h3>
+          <p>Kết hợp phong cách hiện đại với sự thoải mái, tạo ra những bộ quần áo độc đáo.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💚</div>
+          <h3>Chăm Sóc Khách Hàng</h3>
+          <p>Phục vụ khách hàng bằng tấm lòng và sự tận tâm, luôn sẵn sàng hỗ trợ.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
